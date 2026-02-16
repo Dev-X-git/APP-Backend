@@ -48,4 +48,4 @@ async def restore_database(file: UploadFile = File(...)):
         ], check=True, env={"PGPASSWORD": os.getenv("DB_PASSWORD")})
         return {"message": "Restore successful"}
     except subprocess.CalledProcessError as e:
-        raise HTTPException(status_code=500, detail=f"Restore failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Restore failed")
